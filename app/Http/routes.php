@@ -11,10 +11,6 @@
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
-
 /*
 |--------------------------------------------------------------------------
 | Application Routes
@@ -27,5 +23,26 @@ Route::get('/', function () {
 */
 
 Route::group(['middleware' => ['web']], function () {
-    //
+
+    Route::get('/', function () {
+        //return view('welcome');
+        return("This is my index page!");
+    });
+
+    Route::get('/lorem-ipsum', function() {
+        return("This page will show the lorem ipsum generator form(method will be GET).");
+    });
+
+    Route::post('/lorem-ipsum', function() {
+        return("This page will show the desired number of paragraphs with lorem ipsum text(method will be POST).");
+    });
+
+    Route::get('/random-user-generator', function() {
+        return("This page will show the random user generator form(method will be GET).");
+    });
+
+    Route::post('/random-user-generator', function() {
+        return("This page will show randomly generated user(s)(method will be POST).");
+    });
+
 });

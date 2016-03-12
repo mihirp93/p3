@@ -2,7 +2,7 @@
 <html>
 <head>
     <title>
-        @yield('title','Developer's Best Friend')
+        @yield('title','Devs Best Friend')
     </title>
 
     <meta charset='utf-8'>

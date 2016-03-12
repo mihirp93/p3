@@ -24,14 +24,21 @@
 
 Route::group(['middleware' => ['web']], function () {
 
-    Route::get('/', 'LoremIpsumController@getIndex');
+    // route for the index page.
+    Route::get('/', function() {
+      return view('index');
+    });
 
+    // route for the lorem ipsum page (display the form via GET method)
     Route::get('/LoremIpsum', 'LoremIpsumController@getShowForm');
 
+    // route for the lorem ipsum page(to process the form via POST method)
     Route::post('/LoremIpsum', 'LoremIpsumController@postProcessForm');
 
+    // route for the random user page (display the form via GET method)
     Route::get('/RandomUser', 'RandomUserController@getShowForm');
 
+    // route for the random user page(to process the form via POST method)
     Route::post('/RandomUser', 'RandomUserController@postProcessForm');
 
 });

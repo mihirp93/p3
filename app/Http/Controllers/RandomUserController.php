@@ -6,12 +6,12 @@ use p3\Http\Controllers\Controller;
 
 class RandomUserController extends Controller {
 
-    // controller of route GET /RandomUser
+    // controller for route /RandomUser (GET Method)
     public function getShowForm() {
         return view('RandomUser.ShowForm');
     }
 
-    // controller of route POST /RandomeUser
+    // controller for route /RandomUser (POST method)
     public function postProcessForm() {
         return view('RandomUser.ProcessForm');
     }

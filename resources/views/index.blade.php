@@ -14,14 +14,14 @@
 
   <h2>Lorem Ipsum Generator</h2>
   <p>
-    <a href="/LoremIpsum" alt="Lorem Ipsum Link" title="Lorem Ipsum Generator">Click me</a>
+    <a href="/lorem-ipsum" alt="Lorem Ipsum Link" title="Lorem Ipsum Generator">Click me</a>
     to generate lorem ipsum text. It's simple. All you have to do is provide the number of paragraphs.
     And, I will do the heavy lifting to generate the desired number of paragraphs with lorem ipsum text.
   </p>
 
   <h2>Random User Generator</h2>
   <p>
-    <a href="/RandomUser" alt="Random User Link" title="Random User Generator">Click me</a> to generate random users. Again, all you have to do is provide the number of users desired and any
+    <a href="/random-user" alt="Random User Link" title="Random User Generator">Click me</a> to generate random users. Again, all you have to do is provide the number of users desired and any
      pertinent information(like Date of Birth, Brief description, etc).You sit back and relax!!
      And, I will go and do the work for you.
   </p>

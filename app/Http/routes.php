@@ -24,25 +24,14 @@
 
 Route::group(['middleware' => ['web']], function () {
 
-    Route::get('/', function () {
-        //return view('welcome');
-        return("This is my index page!");
-    });
+    Route::get('/', 'LoremIpsumController@getIndex');
 
-    Route::get('/lorem-ipsum', function() {
-        return("This page will show the lorem ipsum generator form(method will be GET).");
-    });
+    Route::get('/LoremIpsum', 'LoremIpsumController@getShowForm');
 
-    Route::post('/lorem-ipsum', function() {
-        return("This page will show the desired number of paragraphs with lorem ipsum text(method will be POST).");
-    });
+    Route::post('/LoremIpsum', 'LoremIpsumController@postProcessForm');
 
-    Route::get('/random-user-generator', function() {
-        return("This page will show the random user generator form(method will be GET).");
-    });
+    Route::get('/RandomUser', 'RandomUserController@getShowForm');
 
-    Route::post('/random-user-generator', function() {
-        return("This page will show randomly generated user(s)(method will be POST).");
-    });
+    Route::post('/RandomUser', 'RandomUserController@postProcessForm');
 
 });

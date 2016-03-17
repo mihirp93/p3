@@ -5,9 +5,14 @@
 @stop
 
 @section('content')
-    <form method="POST">
-      {{ csrf_field() }}
+    <form method="POST" action="http://localhost/p3/public/random-user">
+     {{ csrf_field() }}
       <input type="text" name="numOfUsers" placeholder="number of users">
+      <br>
+      <input type="checkbox" name="includeAddress"><label for="includeAddress">Include Address</label>
+      <br>
+      <input type="checkbox" name="includeProfile"><label for="includeProfile">Include a brief profile</label>
+      <br>
       <input type="submit" value="Generate">
     </form>
     <br>
@@ -19,12 +24,17 @@
                 echo "<h2>";
                 echo $faker->name;
                 echo "</h2>";
-                echo "<p>";
-                echo $faker->address;
-                echo "</p>";
-                echo "<p>";
-                echo $faker->text;
-                echo "</p>";
+                if($includeAddress === "on") {
+                  echo "<p>";
+                  echo $faker->address;
+                  echo "</p>";
+                }
+
+                if ($includeProfile === "on") {
+                  echo "<p>";
+                  echo $faker->text;
+                  echo "</p>";
+                }
             }
         ?>
     @else

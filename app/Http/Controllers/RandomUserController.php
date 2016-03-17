@@ -2,6 +2,10 @@
 
 namespace p3\Http\Controllers;
 
+use p3\Http\Controllers\Controller;
+use Illuminate\Http\Request;
+
+
 class RandomUserController extends Controller {
 
     // controller for route /RandomUser (GET Method)
@@ -10,18 +14,31 @@ class RandomUserController extends Controller {
     }
 
     // controller for route /RandomUser (POST method)
-    public function postProcessForm() {
+    public function postProcessForm(Request $request) {
 
-        if(isset($_POST["numOfUsers"])
-           && is_numeric($_POST["numOfUsers"])
-           && $_POST["numOfUsers"] > 0
-           && $_POST["numOfUsers"] < 10) {
-            $numOfUsers = $_POST["numOfUsers"];
-        }
-        else {
-            $numOfUsers = 0;
-        }
-        return view('RandomUser.ProcessForm')->with('numOfUsers',$numOfUsers);
+      $this->validate($request, [
+        'numOfUsers' => 'required|integer|between:1,10'
+      ]);
+
+      $numOfUsers = $request->input('numOfUsers');
+      $includeAddress = $request->input('includeAddress');
+      if(isset($includeAddress)) {
+        $includeAddress = "on";
+      }
+      else {
+        $includeAddress= "off";
+      }
+      $includeProfile = $request->input('includeProfile');
+      if (isset($includeProfile)) {
+        $includeProfile = "on";
+      }
+      else {
+        $includeProfile = "off";
+      }
+
+      return view('RandomUser.ProcessForm')->with('numOfUsers', $numOfUsers)
+                                           ->with('includeAddress', $includeAddress)
+                                           ->with('includeProfile', $includeProfile);
     }
 
 }

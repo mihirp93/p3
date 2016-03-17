@@ -7,7 +7,10 @@
 @section('content')
     <form method="POST" action="http://localhost/p3/public/random-user">
      {{ csrf_field() }}
-      <input type="text" name="numOfUsers" placeholder="number of users">
+     <label for="numOfUsers">How many users?(Max:99)</label>
+     <input type="text" name="numOfUsers" maxlength="2" size="2" value="10">
+      <br>
+      <input type="checkbox" name="includeDOB"><label for="includeDOB">Include Date of Birth</label>
       <br>
       <input type="checkbox" name="includeAddress"><label for="includeAddress">Include Address</label>
       <br>
@@ -24,6 +27,12 @@
                 echo "<h2>";
                 echo $faker->name;
                 echo "</h2>";
+
+                if ($includeDOB === "on") {
+                  echo "<p>";
+                  echo $faker->dateTimeThisCentery->format('Y-m-d');
+                  echo "</p>";
+                }
                 if($includeAddress === "on") {
                   echo "<p>";
                   echo $faker->address;
@@ -37,7 +46,5 @@
                 }
             }
         ?>
-    @else
-        <p>Invalid input!</p>
     @endif
 @stop

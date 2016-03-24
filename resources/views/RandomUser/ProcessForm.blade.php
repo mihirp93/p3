@@ -4,26 +4,45 @@
   Random Generator
 @stop
 
+@section('head')
+<link type="text/css" rel="stylesheet" href="css/styles.css">
+@stop
+
 @section('content')
-    <form method="POST" action="http://localhost/p3/public/random-user">
-     {{ csrf_field() }}
-     <label for="numOfUsers">How many users?(Max:99)</label>
-     <input type="text"
-            name="numOfUsers"
-            maxlength="2"
-            size="2"
-            value="{{ old('numOfUsers') }}">
-      <br>
-      <input type="checkbox" name="includeDOB"><label for="includeDOB">Include Date of Birth</label>
-      <br>
-      <input type="checkbox" name="includeAddress"><label for="includeAddress">Include Address</label>
-      <br>
-      <input type="checkbox" name="includeProfile"><label for="includeProfile">Include a brief profile</label>
-      <br>
-      <input type="submit" value="Generate">
-    </form>
-    <br>
-    <br>
+  <div class="my_container">
+    <h1>Random User Generator</h1>
+    <div class="jumbotron">
+        <form class="form-horizontal" method="POST" action="/random-user">
+             {{ csrf_field() }}
+             <div class="form-group">
+                 <label>How many users?(Max:99)
+                   <input type="text"
+                          name="numOfUsers"
+                          value="{{ old('numOfUsers') }}"
+                          maxlength="2"
+                          size="2"
+                          class="form-control">
+                </label>
+             </div>
+             <div class="checkbox">
+                <label>
+                  <input type="checkbox" name="includeDOB"> Include Date of Birth
+                </label>
+            </div>
+            <div class="checkbox">
+               <label>
+                 <input type="checkbox" name="includeAddress"> Include Address
+               </label>
+           </div>
+           <div class="checkbox">
+              <label>
+                <input type="checkbox" name="includeProfile"> Include a brief profile
+              </label>
+          </div>
+             <button type="submit" class="btn btn-default">Generate Users</button>
+        </form>
+    </div>
+
     @if($numOfUsers > 0)
         <?php
             $faker = Faker\Factory::create();
@@ -34,7 +53,7 @@
 
                 if ($includeDOB === "on") {
                   echo "<p>";
-                  echo $faker->dateTimeThisCentery->format('Y-m-d');
+                  echo $faker->dateTimeThisCentury->format('Y-m-d');
                   echo "</p>";
                 }
                 if($includeAddress === "on") {
@@ -51,4 +70,5 @@
             }
         ?>
     @endif
+</div>
 @stop

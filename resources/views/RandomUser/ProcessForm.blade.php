@@ -24,51 +24,23 @@
                           class="form-control">
                 </label>
              </div>
-             <div class="checkbox">
-                <label>
-                  <input type="checkbox" name="includeDOB"> Include Date of Birth
+             <div class="my_check_group">
+                 <label class="checkbox">
+                   <input type="checkbox" name="includeDOB"> Include Date of Birth
+                 </label>
+                <label class="checkbox">
+                  <input type="checkbox" name="includeAddress"> Include Address
                 </label>
-            </div>
-            <div class="checkbox">
-               <label>
-                 <input type="checkbox" name="includeAddress"> Include Address
+
+               <label class="checkbox">
+                 <input type="checkbox" name="includeProfile"> Include a brief profile
                </label>
            </div>
-           <div class="checkbox">
-              <label>
-                <input type="checkbox" name="includeProfile"> Include a brief profile
-              </label>
-          </div>
              <button type="submit" class="btn btn-default">Generate Users</button>
         </form>
     </div>
-
-    @if($numOfUsers > 0)
-        <?php
-            $faker = Faker\Factory::create();
-            for($i = 0; $i < $numOfUsers; $i++) {
-                echo "<h2>";
-                echo $faker->name;
-                echo "</h2>";
-
-                if ($includeDOB === "on") {
-                  echo "<p>";
-                  echo $faker->dateTimeThisCentury->format('Y-m-d');
-                  echo "</p>";
-                }
-                if($includeAddress === "on") {
-                  echo "<p>";
-                  echo $faker->address;
-                  echo "</p>";
-                }
-
-                if ($includeProfile === "on") {
-                  echo "<p>";
-                  echo $faker->text;
-                  echo "</p>";
-                }
-            }
-        ?>
+    @if(isset($generatedString))
+      <?php echo $generatedString ?>
     @endif
 </div>
 @stop

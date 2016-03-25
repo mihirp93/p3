@@ -33,24 +33,21 @@
                         class="form-control">
               </label>
              </div>
-             <div class="checkbox">
-                <label>
+            <div class="my_check_group">
+                <label class="checkbox">
                   <input type="checkbox" name="includeDOB"> Include Date of Birth
                 </label>
-            </div>
-            <div class="checkbox">
-               <label>
+               <label class="checkbox">
                  <input type="checkbox" name="includeAddress"> Include Address
                </label>
-           </div>
-           <div class="checkbox">
-              <label>
+
+              <label class="checkbox">
                 <input type="checkbox" name="includeProfile"> Include a brief profile
               </label>
           </div>
           <div class="form-group">
              <button type="submit" class="btn btn-default">Generate Users</button>
-          </div>   
+          </div>
         </form>
     </div>
   </div>

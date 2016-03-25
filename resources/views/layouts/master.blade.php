@@ -29,7 +29,7 @@
         </div>
         {{-- Main page content will be yielded here --}}
         @yield('content')
-        <footer class="footer">
+        <footer class="my_footer">
           <p>&copy; {{ date('Y') }}
         </footer>
     </div>

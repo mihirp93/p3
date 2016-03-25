@@ -54,12 +54,28 @@ class RandomUserController extends Controller {
             $includeProfile = "off";
         }
 
+        $faker = \Faker\Factory::create();
+        $generatedString = "";
+        for($i = 0; $i < $numOfUsers; $i++) {
+            $generatedString .= "<h2>".$faker->name."</h2>";
+
+            if ($includeDOB === "on") {
+              $generatedString .= "<p>".$faker->dateTimeThisCentury->format('Y-m-d')."</p>";
+            }
+            if($includeAddress === "on") {
+              $generatedString .= "<p>".$faker->address."</p>";
+            }
+
+            if ($includeProfile === "on") {
+              $generatedString .= "<p>".$faker->text."</p>";
+            }
+
+            $generatedString .= "<br>";
+        }
+
         # return the view with the form criteria which will be
         # to generate the random users.
-        return view('RandomUser.ProcessForm')->with('numOfUsers', $numOfUsers)
-                                             ->with('includeDOB', $includeDOB)
-                                             ->with('includeAddress', $includeAddress)
-                                             ->with('includeProfile', $includeProfile);
+        return view('RandomUser.ProcessForm')->with('generatedString', $generatedString);
     }
     # postProcessForm()
 

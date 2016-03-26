@@ -54,6 +54,7 @@ class RandomUserController extends Controller {
             $includeProfile = "off";
         }
 
+        # generate the users using external package.
         $faker = \Faker\Factory::create();
         $generatedString = "";
         for($i = 0; $i < $numOfUsers; $i++) {
@@ -73,8 +74,7 @@ class RandomUserController extends Controller {
             $generatedString .= "<br>";
         }
 
-        # return the view with the form criteria which will be
-        # to generate the random users.
+        # return the view with the generated users and pertinent info(if any).
         return view('RandomUser.ProcessForm')->with('generatedString', $generatedString);
     }
     # postProcessForm()

@@ -4,10 +4,6 @@
   Lorem Ipsum Generator
 @stop
 
-@section('head')
-<link type="text/css" rel="stylesheet" href="css/styles.css">
-@stop
-
 @section('content')
   <div class="my_container">
     <h1>Lorem Ipsum Text Generator</h1>
@@ -28,12 +24,7 @@
         </form>
     </div>
   </div>
-  <?php
-      foreach($paragraphs as $paragraph){
-        echo "<p>";
-        echo $paragraph;
-        echo "</p>";
-      }
-  ?>
-
+  @foreach ($paragraphs as $paragraph)
+    <p>{{ $paragraph }}</p>
+  @endforeach
 @stop

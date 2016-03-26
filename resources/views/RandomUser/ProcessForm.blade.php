@@ -4,10 +4,6 @@
   Random Generator
 @stop
 
-@section('head')
-<link type="text/css" rel="stylesheet" href="css/styles.css">
-@stop
-
 @section('content')
   <div class="my_container">
     <h1>Random User Generator</h1>
@@ -31,7 +27,6 @@
                 <label class="checkbox">
                   <input type="checkbox" name="includeAddress"> Include Address
                 </label>
-
                <label class="checkbox">
                  <input type="checkbox" name="includeProfile"> Include a brief profile
                </label>

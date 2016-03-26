@@ -4,10 +4,6 @@
   Random User Generator
 @stop
 
-@section('head')
-<link type="text/css" rel="stylesheet" href="css/styles.css">
-@stop
-
 @section('content')
   <div class="my_container">
     <h1>Random User Generator</h1>

@@ -5,10 +5,10 @@
     <meta charset='utf-8'>
 
     <!-- Bootstrap core CSS -->
-    <link href="https://bootswatch.com/darkly/bootstrap.min.css"
-          rel="stylesheet"
-          type="text/css">
+    <link rel="stylesheet"type="text/css" href="css/bootstrap.css">
 
+    <!-- Custom CSS -->
+    <link type="text/css" rel="stylesheet" href="css/styles.css">
 
     {{-- To yield any page specific CSS files or anything else in the head element --}}
     @yield('head')
@@ -18,12 +18,9 @@
         <div class="header clearfix">
            <nav>
               <ul class="nav nav-justified">
-                 <li class="active"><a href="/">Home</a>
-                 </li>
-                 <li><a href="/lorem-ipsum">Lorem Ipsum Text Generator</a>
-                 </li>
-                 <li><a href="/random-user">Random User Generator</a>
-                 </li>
+                 <li class="active"><a href="/">Home</a></li>
+                 <li><a href="/lorem-ipsum">Lorem Ipsum Text Generator</a></li>
+                 <li><a href="/random-user">Random User Generator</a></li>
               </ul>
            </nav>
         </div>

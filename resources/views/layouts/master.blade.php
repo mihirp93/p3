@@ -5,7 +5,7 @@
     <meta charset='utf-8'>
 
     <!-- Bootstrap core CSS -->
-    <link rel="stylesheet"type="text/css" href="css/bootstrap.css">
+    <link rel="stylesheet" type="text/css" href="css/bootstrap.css">
 
     <!-- Custom CSS -->
     <link type="text/css" rel="stylesheet" href="css/styles.css">

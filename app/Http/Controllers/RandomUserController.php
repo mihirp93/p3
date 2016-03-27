@@ -27,10 +27,19 @@ class RandomUserController extends Controller {
         ]);
         $numOfUsers = $request->input('numOfUsers');
 
+        $faker = \Faker\Factory::create();
+        for ($i = 0; $i < $numOfUsers; $i++) {
+          $users[$i] = $faker->name;
+        }
+
         # set the flag to signal the inclusion of user's DOB.
         $includeDOB = $request->input('includeDOB');
+        $birthdays = array();
         if(isset($includeDOB)) {
             $includeDOB = "on";
+            for($i = 0; $i < $numOfUsers; $i++) {
+              $birthdays[$i] = $faker->dateTimeThisCentury->format('Y-m-d');
+            }
         }
         else {
             $includeDOB = "off";
@@ -38,8 +47,12 @@ class RandomUserController extends Controller {
 
         # set the flag to signal the inclusion of user's address.
         $includeAddress = $request->input('includeAddress');
+        $addresses = array();
         if(isset($includeAddress)) {
             $includeAddress = "on";
+            for($i = 0; $i < $numOfUsers; $i++) {
+              $addresses[$i] = $faker->address;
+            }
         }
         else {
             $includeAddress= "off";
@@ -47,35 +60,22 @@ class RandomUserController extends Controller {
 
         # set the flag to signal the inclusion of user's profile.
         $includeProfile = $request->input('includeProfile');
+        $profiles = array();
         if (isset($includeProfile)) {
             $includeProfile = "on";
+            for($i = 0; $i < $numOfUsers; $i++) {
+              $profiles[$i] = $faker->text;
+            }
         }
         else {
             $includeProfile = "off";
         }
 
-        # generate the users using external package.
-        $faker = \Faker\Factory::create();
-        $generatedString = "";
-        for($i = 0; $i < $numOfUsers; $i++) {
-            $generatedString .= "<h2>".$faker->name."</h2>";
-
-            if ($includeDOB === "on") {
-              $generatedString .= "<p>".$faker->dateTimeThisCentury->format('Y-m-d')."</p>";
-            }
-            if($includeAddress === "on") {
-              $generatedString .= "<p>".$faker->address."</p>";
-            }
-
-            if ($includeProfile === "on") {
-              $generatedString .= "<p>".$faker->text."</p>";
-            }
-
-            $generatedString .= "<br>";
-        }
-
         # return the view with the generated users and pertinent info(if any).
-        return view('RandomUser.ProcessForm')->with('generatedString', $generatedString);
+        return view('RandomUser.ProcessForm')->with('users',$users)
+                                             ->with('birthdays', $birthdays)
+                                             ->with('addresses', $addresses)
+                                             ->with('profiles',$profiles);
     }
     # postProcessForm()
 

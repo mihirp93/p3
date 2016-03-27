@@ -34,8 +34,19 @@
              <button type="submit" class="btn btn-default">Generate Users</button>
         </form>
     </div>
-    @if(isset($generatedString))
-      <?php echo $generatedString ?>
+    @if(isset($users))
+        @for($i = 0; $i < count($users); $i++)
+          <h3>{{ $users[$i] }}</h3>
+          @if (count($birthdays) > 0)
+            <p>{{ $birthdays[$i] }}</p>
+          @endif
+          @if (count($addresses) > 0)
+            <p>{{ $addresses[$i] }}</p>
+          @endif
+          @if (count($profiles) > 0)
+            <p>{{ $profiles[$i] }}</p>
+          @endif
+        @endfor
     @endif
 </div>
 @stop

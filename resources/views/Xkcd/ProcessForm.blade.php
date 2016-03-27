@@ -56,7 +56,7 @@
           <tbody>
             @for($i = 0; $i < count($passwords); $i++)
               <tr>
-              <td> {{ $i + 1 }}
+              <td> {{ $i + 1 }}</td>
               <td>{{ $passwords[$i] }}</td>
               </tr>
             @endfor

@@ -41,4 +41,10 @@ Route::group(['middleware' => ['web']], function () {
     # route for the random user page(to process the form via POST method)
     Route::post('/random-user', 'RandomUserController@postProcessForm');
 
+    # route for the xkcd password page (display the form via GET method)
+    Route::get('/xkcd', 'XkcdController@getShowForm');
+
+    # route for the xkcd password page (to process the form via POST method)
+    Route::post('/xkcd', 'XkcdController@postProcessForm');
+
 });

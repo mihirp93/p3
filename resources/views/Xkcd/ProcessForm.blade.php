@@ -61,6 +61,7 @@
               </tr>
             @endfor
         </tbody>
+    </table>
     @endif
   </div>
 @stop

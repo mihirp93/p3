@@ -47,4 +47,10 @@ Route::group(['middleware' => ['web']], function () {
     # route for the xkcd password page (to process the form via POST method)
     Route::post('/xkcd', 'XkcdController@postProcessForm');
 
+    # route for the chmod permissions page (display the form via GET method)
+    Route::get('/chmod-calc', 'ChmodCalcController@getShowForm');
+
+    # route for the chmod permissions page (to process the form via POST method)
+    Route::post('/chmod-calc', 'ChmodCalcController@postProcessForm');
+
 });

@@ -1,7 +1,7 @@
 @extends('layouts.master')
 
 @section('title')
-  Random User Generator
+  Xkcd Password Generator
 @stop
 
 @section('content')

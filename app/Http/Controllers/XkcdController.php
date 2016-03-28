@@ -19,7 +19,8 @@ class XkcdController extends Controller {
     public function postProcessForm(Request $request) {
     ################################################################
     # Responds to requests to POST /xkcd
-    # validate the "number of words" form field.
+
+      # validate the "number of words" form field.
       $this->validate($request, [
           'numOfWords' => 'required|integer|between:1,9'
       ]);

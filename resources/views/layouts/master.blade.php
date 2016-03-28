@@ -22,6 +22,7 @@
                  <li><a href="/lorem-ipsum">Lorem Ipsum Text Generator</a></li>
                  <li><a href="/random-user">Random User Generator</a></li>
                  <li><a href="/xkcd">Xkcd Password Generator</a></li>
+                 <li><a href="/chmod-calc">Permissions Calculator</a></li>
               </ul>
            </nav>
         </div>

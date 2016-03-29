@@ -9,7 +9,7 @@ which include lorem ipsum text generator, dummy user generator, xkcd password
  generator, and chmod permissions calculator.
 
 ## Demo
-<http://www.screencast.com/t/AQe3RBBSAKt>
+<http://www.screencast.com/t/wxBAYFC5p8vf>
 
 ## Details for teaching team
 No login required.

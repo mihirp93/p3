@@ -4,7 +4,9 @@
 <http://p3.mihirp.me/>
 
 ## Description
-A web application that features several tools specifically made for developers, which include lorem ipsum text generator, dummy user generator, xkcd password generator, and chmod permissions calculator.
+A web application that features several tools specifically made for developers,
+which include lorem ipsum text generator, dummy user generator, xkcd password
+ generator, and chmod permissions calculator.
 
 ## Demo
 Coming soon.

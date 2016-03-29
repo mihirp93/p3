@@ -8,7 +8,7 @@
   <div class="my_container">
     <h1>Chmod Permissions Calculator</h1>
     <div class="jumbotron">
-      <form class="form-horizontal" method="POST" action="#">
+      <form class="form-horizontal" method="POST" action="/chmod-calc">
            {{ csrf_field() }}
           <table class="table table-striped">
               <thead>
